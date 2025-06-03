@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>すべて世は事も無し - ロバート・ブラウニング</title>
+    <title>春の朝 - ロバート・ブラウニング</title>
     <style>
         /* 全体のリセット */
         * {
@@ -15,11 +15,16 @@
         /* ボディのスタイル */
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #2c3e50; /* 深い青緑の背景色 */
-            color: #ecf0f1; /* 明るいグレーのテキスト色 */
+            background-color: #eaf1f1; /* 淡い春の空色 */
+            color: #2c3e50; /* 落ち着いた文字色 */
             text-align: center;
             padding: 20px;
             line-height: 1.6;
+            background-image: url('https://source.unsplash.com/1600x900/?spring,morning'); /* 春の朝のイメージ画像 */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            color: white;
         }
 
         /* ヘッダー */
@@ -35,7 +40,7 @@
             margin-top: 30px;
             font-size: 2rem;
             font-style: italic;
-            color: #bdc3c7;
+            color: #ecf0f1;
         }
 
         /* 詩の内容部分 */
@@ -43,92 +48,83 @@
             margin-top: 40px;
             font-size: 1.3rem;
             color: #bdc3c7;
-            text-align: justify;
+            text-align: center;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        /* キーワード強調 */
+        /* 強調部分 */
         .highlight {
             font-weight: bold;
-            color: #e74c3c; /* 赤みの強調色 */
+            color: #f39c12; /* 春の陽光のような色 */
         }
 
-        /* フッター */
+        /* 説明セクション */
+        .poem-explanation {
+            margin-top: 40px;
+            font-size: 1.2rem;
+            color: #ecf0f1;
+            text-align: left;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
         footer {
             margin-top: 50px;
             font-size: 1rem;
             color: #bdc3c7;
         }
 
-        /* 雨粒のアニメーション */
-        .rain {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            pointer-events: none;
-            z-index: -1;
+        /* シンプルなボタンスタイル */
+        .btn {
+            background-color: #f39c12;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
         }
 
-        .raindrop {
-            position: absolute;
-            background-color: rgba(255, 255, 255, 0.5);
-            width: 2px;
-            height: 10px;
-            animation: fall 0.5s infinite linear;
-            opacity: 0.7;
+        .btn:hover {
+            background-color: #e67e22;
         }
 
-        @keyframes fall {
-            0% {
-                transform: translateY(-100vh);
-            }
-            100% {
-                transform: translateY(100vh);
-            }
-        }
     </style>
 </head>
 <body>
 
-    <header>ロバート・ブラウニングの詩</header>
+    <header>ロバート・ブラウニングの詩『春の朝』</header>
 
-    <div class="poem-title">すべて世は事も無し</div>
+    <div class="poem-title">春の朝</div>
 
     <div class="poem-content">
-        <p>何事も、すべては事も無し、<br>
-        <span class="highlight">冷徹な心</span>が静かに見守り、<br>
-        過ぎ去りし出来事に目を向けることなく、<br>
-        ただ<em>無感動</em>に立ちすくむ。<br>
-        世の中は、すべて事も無し。<br>
+        <p>時は春、<br>
+        日は朝、<br>
+        朝は七時、<br>
+        片岡に露みちて、<br>
+        揚雲雀なのりいで、<br>
+        蝸牛枝に這ひ、<br>
+        神、そらに知ろしめす。<br>
+        <span class="highlight">すべて世は事も無し。</span><br>
         </p>
+    </div>
+
+    <div class="poem-explanation">
+        <h2>詩の背景と説明</h2>
+        <p>この詩『春の朝』は、ロバート・ブラウニングの長編劇詩『ピッパが通る』からの一節です。上田敏によって訳され、日本でも広く親しまれています。春の清々しい朝を描いたシンプルで美しい言葉で、誰もが共感できる優しさと希望を感じさせます。</p>
+        <p>しかし、この詩は単なる風景の描写ではなく、登場人物たちの心の動きと深く関係しています。詩の内容は、ピッパという無邪気な少女が歌う歌詞です。ピッパがアソロという町を通り、ある家の前を通るシーンで、彼女の歌声がその場の人物たちに影響を与えます。</p>
+        <p>ピッパが通りかかる家の主人であるオッティマは、情夫と結託して夫を殺したところで口論中でした。ピッパの歌声はその情夫に心を動かし、罪を悔いるきっかけとなります。詩『春の朝』は、ピッパの屈託のない歌声が犯した罪を悔いる情夫の心を変える力を象徴しているのです。</p>
+        <p>「すべて世は事も無し」という一行は、すべての事柄を超越した無邪気な態度を表しており、ピッパの無垢さと春の新しい始まりを象徴しています。</p>
     </div>
 
     <footer>&copy; 2025 ロバート・ブラウニング</footer>
 
-    <!-- 雨のエフェクト -->
-    <div class="rain" id="rain"></div>
-
-    <script>
-        // 雨のドロップをランダムに生成する関数
-        function generateRain() {
-            const rainContainer = document.getElementById('rain');
-            const numberOfDrops = 100; // 雨粒の数
-            for (let i = 0; i < numberOfDrops; i++) {
-                const drop = document.createElement('div');
-                drop.classList.add('raindrop');
-                drop.style.left = `${Math.random() * 100}vw`; // 横方向のランダム位置
-                drop.style.animationDuration = `${Math.random() * 1 + 0.5}s`; // 雨粒ごとに異なる落下速度
-                drop.style.animationDelay = `${Math.random() * 2}s`; // 遅延時間をランダムに
-                rainContainer.appendChild(drop);
-            }
-        }
-
-        generateRain(); // 雨のドロップを生成
-    </script>
+   
 
 </body>
 </html>
