@@ -3,88 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>シンプルなWebページ</title>
+    <title>雨の日のウェブページ</title>
     <style>
-        /* 全体の設定 */
-        body {
-            font-family: Arial, sans-serif;
+        /* 全体のリセット */
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            box-sizing: border-box;
         }
 
-        /* ヘッダーのスタイル */
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
+        /* ボディのスタイル */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1e2a47; /* 夜のような暗い背景 */
+            color: white;
             text-align: center;
-        }
-
-        /* メインコンテンツのスタイル */
-        main {
+            overflow: hidden; /* 背景アニメーションが画面外に出ないように */
             padding: 20px;
         }
 
-        /* セクションのデザイン */
-        section {
-            background-color: #fff;
-            margin: 20px 0;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        h1 {
+            font-size: 3rem;
+            margin-top: 50px;
         }
 
-        /* フッターのスタイル */
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            width: 100%;
+        p {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            line-height: 1.8;
+            color: #ddd;
+        }
+
+        /* 雨のアニメーション */
+        .rain {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
             bottom: 0;
+            pointer-events: none; /* 雨がクリックをブロックしないように */
+            z-index: -1; /* コンテンツの後ろに配置 */
         }
 
-        /* リンクのスタイル */
-        a {
-            color: #4CAF50;
+        .raindrop {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.5);
+            width: 2px;
+            height: 10px;
+            animation: fall 0.5s infinite linear;
+            opacity: 0.5;
+        }
+
+        /* 雨の落下アニメーション */
+        @keyframes fall {
+            0% {
+                transform: translateY(-100vh);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+
+        /* ナビゲーションメニュー */
+        nav {
+            margin-top: 50px;
+        }
+
+        nav a {
+            color: white;
             text-decoration: none;
+            font-size: 1.2rem;
+            margin: 0 20px;
         }
 
-        a:hover {
-            text-decoration: underline;
+        nav a:hover {
+            color: #4CAF50;
+        }
+
+        footer {
+            margin-top: 50px;
+            color: #ddd;
         }
     </style>
 </head>
 <body>
 
-    <!-- ヘッダー -->
-    <header>
-        <h1>ようこそ！シンプルなWebページへ</h1>
-    </header>
+    <h1>雨の日のウェブページ</h1>
+    <p>雨の音を聞きながら、ゆっくり過ごす時間。静かで落ち着いた雰囲気をお楽しみください。</p>
 
-    <!-- メインコンテンツ -->
-    <main>
-        <section>
-            <h2>このページについて</h2>
-            <p>これはHTMLとCSSを使って作成されたシンプルなWebページの例です。ヘッダー、メインコンテンツ、フッターを含み、基本的なスタイリングがされています。</p>
-        </section>
+    <nav>
+        <a href="#">ホーム</a>
+        <a href="#">天気予報</a>
+        <a href="#">音楽</a>
+    </nav>
 
-        <section>
-            <h2>特徴</h2>
-            <ul>
-                <li>レスポンシブデザイン</li>
-                <li>シンプルで読みやすいレイアウト</li>
-                <li>カスタマイズ可能なスタイル</li>
-            </ul>
-        </section>
-    </main>
-
-    <!-- フッター -->
     <footer>
-        <p>&copy; 2025 シンプルなWebページ</p>
+        <p>&copy; 2025 雨のウェブページ</p>
     </footer>
+
+    <!-- 雨のエフェクト -->
+    <div class="rain" id="rain"></div>
+
+    <script>
+        // 雨のドロップをランダムに生成する関数
+        function generateRain() {
+            const rainContainer = document.getElementById('rain');
+            const numberOfDrops = 100; // 雨粒の数
+            for (let i = 0; i < numberOfDrops; i++) {
+                const drop = document.createElement('div');
+                drop.classList.add('raindrop');
+                drop.style.left = `${Math.random() * 100}vw`; // 横方向のランダム位置
+                drop.style.animationDuration = `${Math.random() * 1 + 0.5}s`; // 雨粒ごとに異なる落下速度
+                drop.style.animationDelay = `${Math.random() * 2}s`; // 遅延時間をランダムに
+                rainContainer.appendChild(drop);
+            }
+        }
+
+        generateRain(); // 雨のドロップを生成
+    </script>
 
 </body>
 </html>
